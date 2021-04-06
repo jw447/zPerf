@@ -1,5 +1,5 @@
 # zPerf: A Statistical Gray-box Approach to Performance Modeling and Extrapolation for Scientific Lossy Compression
-----
+
 As simulation-based scientific discovery is being further scaled up on high-performance computing systems, 
 the disparity between compute and I/O has 
 continued to widen. As such, domain scientists are forced to save only a small portion of their simulation data to persistent
