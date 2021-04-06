@@ -22,9 +22,9 @@ The following python packages are used in zPerf and can be installed by
 python -r requirements.txt
 ```
 
-numpy==1.19.5
-pandas==1.1.5
-huffman==0.1.2
+- numpy==1.19.5
+- pandas==1.1.5
+- huffman==0.1.2
 
 The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature, where the necessary data characteristics needed by zPerf to estimation the performance of SZ and ZFP are stored. The modeling functions are defined in func. We demonstrate an example of running compression performance modeling in example.py. Users can run the example by
 
