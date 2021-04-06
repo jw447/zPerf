@@ -30,7 +30,7 @@ python3 -r requirements.txt
 
 The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature. In this folder, ```data_feature.py``` contains the general descriptions of the input dataset, for example data length, data size, and value range. ```sz_input.py``` contains the data features required for SZ modeling. ```zfp_input.py``` contains the features for ZFP modeling. We include the features of datasets used in the work. For other datasets, uses need to obtain them and append them into coresponding file before running the performance modeling.
 
-The modeling functions are defined in func. We demonstrate an example of running compression performance modeling in example.py. Users can try the example by running
+The modeling functions are defined in func. We demonstrate an example of running compression performance modeling in ```example.py```. Users can try the example by running
 
 ```python
 python3 example.py
