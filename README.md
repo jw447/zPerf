@@ -19,15 +19,19 @@ We provide the example job scripts of running SZ on Cori, named as *job_sz.sh,* 
 The following python packages are used in zPerf and can be installed by 
 
 ```python
-python -r requirements.txt
+python3 -r requirements.txt
 ```
 
-- numpy==1.19.5
-- pandas==1.1.5
-- huffman==0.1.2
+- numpy 1.19.5
+- pandas 1.1.5
+- huffman 0.1.2
 
-The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature, where the necessary data characteristics needed by zPerf to estimation the performance of SZ and ZFP are stored. The modeling functions are defined in func. We demonstrate an example of running compression performance modeling in example.py. Users can run the example by
+### Running the performance modeling
+
+The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature. In this folder, ```data_feature.py``` contains the general descriptions of the input dataset, for example data length, data size, and value range. ```sz_input.py``` contains the data features required for SZ modeling. ```zfp_input.py``` contains the features for ZFP modeling. We include the features of datasets used in the work. For other datasets, uses need to obtain them and append them into coresponding file before running the performance modeling.
+
+The modeling functions are defined in func. We demonstrate an example of running compression performance modeling in example.py. Users can try the example by running
 
 ```python
-python example.py
+python3 example.py
 ```
