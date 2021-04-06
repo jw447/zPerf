@@ -10,7 +10,7 @@ We use SZ-2.1.7.0 and ZFP-0.5.5 in this work. The source code of SZ and ZFP are 
 
 ## To run the compression
 
-We provide the example job scripts of running SZ on Cori, named as *job_sz.sh,* and running ZFP on Summit, named as *job_zfp.sh*. Users need to specify the installation path of each compressor and the data directory in the job scripts.
+We provide the example job scripts of running SZ on Cori, named as *job_sz.sh,* and running ZFP on Summit, named as *job_zfp.sh*. Users need to specify the installation path of each compressor and the data directory in the job scripts. Note that ZFP API does not support relative error bound, therefore the absolute eror bound values in *job_zfp.sh* are the product of data range and relative error bound values.
 
 ## To run the compression performance modeling
 
