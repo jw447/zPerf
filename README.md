@@ -9,7 +9,9 @@ We use SZ-2.1.7.0 and ZFP-0.5.5 in this work. The source code of SZ and ZFP are 
 
 ## To run the compression
 
-We provide the example job scripts of running SZ on Cori, named as *job_sz.sh,* and running ZFP on Summit, named as *job_zfp.sh*. Users need to specify the installation path of each compressor and the data directory in the job scripts. Note that ZFP API does not support relative error bound, therefore the absolute eror bound values in *job_zfp.sh* are the product of data range and relative error bound values.
+We provide the example job scripts of running SZ on Cori, named as *job_sz.sh,* and running ZFP on Summit, named as *job_zfp.sh*. Users need to specify the installation path of each compressor and the data directory in the job scripts.
+
+For SZ, we set the number of quantization intervals as 65536 and SZ_Mode as SZ_BEST_SPEED, where the lossless backend is not performed. We set the errBoundMode as REL (relative error bound) and the relative error ratio as [1E-6, 1E-5, 1E-4, 1E-3]. For ZFP, we adopt fixed_accuracy mode and set the absolute error bound as the production of relative error ratio and data range. The relative error ratio for ZFP is set to [1E-6, 1E-5, 1E-4, 1E-3] as well.
 
 ## To run the compression performance modeling
 
@@ -27,9 +29,22 @@ python3 -r requirements.txt
 
 ### Running the performance modeling
 
-The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature. In this folder, ```data_feature.py``` contains the general descriptions of the input dataset, for example data length, data size, and value range. ```sz_input.py``` contains the data features required for SZ modeling. ```zfp_input.py``` contains the features for ZFP modeling. We include the features of datasets used in the work. For other datasets, uses need to obtain them and append them into coresponding file before running the performance modeling.
+The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature. In this folder, ```data_feature.py``` contains the general descriptions of the input dataset, for example data length, data size, and value range. ```sz_input.py``` and ```zfp_input.py``` contain the features for SZ, and ZFP modeling respectively. We include the features of datasets used in the work. For other datasets, uses need to obtain them prior to running the performance modeling.
 
-The modeling functions are defined in func. We demonstrate an example of running compression performance modeling in ```example.py```. Users can try the example by running
+The modeling functions are defined in func. In ```SZ_Estimation.py```, the following functions are defiend:
+
+- ```treeSize_esti```: to estimate the Huffman tree structure size;
+- ```encodeSize_esti```: to estimate the Huffman encoding size;
+- ```outlierSize_esti```: to estimate the curve-missed data size;
+- ```zperf```: to estimate the compression ratio and compression performance of SZ;
+
+In ```ZFP_Estimation.py```, the following functions are defined:
+- ```zeroBlock_esti```: to estimate the number of zero blocks;
+- ```expSize_esti```: to estimate the exponent value size;
+- ```zperf```: to estimate the compression ratio and compression performance of ZFP;
+
+
+We demonstrate an example of running compression performance modeling in ```example.py```. Users can try the example by running
 
 ```python
 python3 example.py
