@@ -30,14 +30,8 @@ python3 -r requirements.txt
 
 The implementation of our work is located at zPerf. The input to the performance modeling is located at data_feature. In this folder, ```data_feature.py``` contains the general descriptions of the input dataset, for example data length, data size, and value range. ```sz_input.py``` and ```zfp_input.py``` contain the features for SZ, and ZFP modeling respectively. We include the features of datasets used in the work. For other datasets, uses need to obtain them prior to running the performance modeling.
 
-The modeling functions are defined in func. In ```SZ_Estimation.py```, the following functions are defiend:
-
-- ```treeSize_esti```: to estimate the Huffman tree structure size;
-- ```zperf```: to estimate the compression ratio and compression performance of SZ;
-
-In ```ZFP_Estimation.py```, the following functions are defined:
-- ```zperf```: to estimate the compression ratio and compression performance of ZFP;
-
+The modeling functions are defined in func. 
+Both in ```SZ_Estimation.py``` and ```ZFP_Estimation.py```, the function ```zperf(dname, errorbound, ratio)```is defined to estimate the compression ratio and compression throughput for SZ and ZFP. The function takes three parameters: the dataset name ```dname```, error bound values ```errorbound```, and population ratio ```ratio```. The return values are the estimated compression ratio and compression throughput.
 
 We demonstrate an example of running compression performance modeling in ```example.py```. Users can try the example by running
 
