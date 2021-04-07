@@ -33,13 +33,9 @@ The implementation of our work is located at zPerf. The input to the performance
 The modeling functions are defined in func. In ```SZ_Estimation.py```, the following functions are defiend:
 
 - ```treeSize_esti```: to estimate the Huffman tree structure size;
-- ```encodeSize_esti```: to estimate the Huffman encoding size;
-- ```outlierSize_esti```: to estimate the curve-missed data size;
 - ```zperf```: to estimate the compression ratio and compression performance of SZ;
 
 In ```ZFP_Estimation.py```, the following functions are defined:
-- ```zeroBlock_esti```: to estimate the number of zero blocks;
-- ```expSize_esti```: to estimate the exponent value size;
 - ```zperf```: to estimate the compression ratio and compression performance of ZFP;
 
 
