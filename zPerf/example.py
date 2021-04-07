@@ -1,5 +1,5 @@
-import func.SZ_Estimation.zperf as sz_zperf
-import func.ZFP_Estimation.zperf as zfp_zperf
+from func import SZ_Estimation
+from func import ZFP_Estimation
 
 # dataset names
 data  = ["Brown", "SCALE", "CESM_ATM", "NYX"]
@@ -12,5 +12,5 @@ ratio = 10000 # population ratio
 
 for i in range(0, len(data)):
     dname = data[i]
-    sz_cr_e, sz_ct_e = sz_zperf(dname, errbound, ratio)
-    zfp_cr_e, zfp_ct_e = sz_zperf(dname, errbound, ratio)
+    sz_cr_e, sz_ct_e = SZ_Estimation.zperf(dname, errbound, ratio)
+    zfp_cr_e, zfp_ct_e = ZFP_Estimation.zperf(dname, errbound, ratio)
